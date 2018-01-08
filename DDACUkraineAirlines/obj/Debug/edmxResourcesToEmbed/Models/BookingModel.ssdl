@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DDACUkrainAirlinesModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Booking">
+    <Key>
+      <PropertyRef Name="FlightID" />
+    </Key>
+    <Property Name="FlightID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FlightName" Type="varchar" MaxLength="200" />
+    <Property Name="Dept_City" Type="varchar" MaxLength="200" />
+    <Property Name="Arrival_City" Type="varchar" MaxLength="200" />
+    <Property Name="Dept_Date" Type="varchar" MaxLength="200" />
+    <Property Name="Return_Date" Type="varchar" MaxLength="200" />
+    <Property Name="Price" Type="float" />
+    <Property Name="SeatNumber" Type="int" />
+  </EntityType>
+  <EntityContainer Name="DDACUkrainAirlinesModel1StoreContainer">
+    <EntitySet Name="Booking" EntityType="Self.Booking" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

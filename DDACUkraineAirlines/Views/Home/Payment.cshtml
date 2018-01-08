@@ -1,0 +1,70 @@
+﻿@model IEnumerable<DDACUkraineAirlines.Models.Booking>
+
+@{
+                /**/
+
+                ViewBag.Title = "Payment";
+}
+
+<body style="background-image: url(http://blog.hdwallsource.com/wp-content/uploads/2014/11/gradient-26052-26737-hd-wallpapers.jpg-680x425.png)" ;>
+    <h2>Payment</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Dept_City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Arrival_City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dept_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Return_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SeatNumber)
+            </th>
+            
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dept_City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Arrival_City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dept_Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Return_Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SeatNumber)
+                </td>
+                <td>
+                    @Html.ActionLink("Pay", "Pay", new { id = item.FlightID }) |
+                    @Html.ActionLink("Cancel", "Cancel", new { id = item.FlightID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
